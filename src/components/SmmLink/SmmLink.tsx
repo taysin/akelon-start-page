@@ -8,7 +8,7 @@ export default ({ icon, to }: Props) => {
     console.error(
       `Link to ${
         icon.iconName
-      } not found in .env file. Please, fill .env file following that naming style: REACT_APP_${icon.iconName.toUpperCase()}_LINK=http://${icon.iconName.toUpperCase()}.com/akelon`
+      } not found in .env file. Please, fill .env file following that naming style: REACT_APP_${icon.iconName.toUpperCase()}_LINK=http://${icon.iconName}.com/akelon`
     );
     return null;
   }
