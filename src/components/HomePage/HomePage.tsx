@@ -1,12 +1,18 @@
 import React from "react";
 import AppBar from "../AppBar";
-import { Typography, Container, } from "@material-ui/core";
+import { useStore } from "./hooks";
+import { Container } from "@material-ui/core";
+import PageAssembler from "../PageAssembler";
 
-export default () => (
-  <>
-    <AppBar />
-    <Container fixed>
-      <Typography component="h1">Добро пожаловать!</Typography>
-    </Container>
-  </>
-);
+export default () => {
+  const store = useStore();
+
+  return (
+    <>
+      <AppBar />
+      <Container fixed>
+        <PageAssembler store={store} />
+      </Container>
+    </>
+  );
+};

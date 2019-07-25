@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   appBarRoot: {
-    backgroundColor: "transparent"
+    backgroundColor: "#fff"
   },
   toolbar: {
     display: "flex",
