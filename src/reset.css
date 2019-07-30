@@ -127,9 +127,24 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
 img {
   max-width: 100%;
 }
 body {
-  background: url("/img/pattern_small_010_opacity.png") repeat;
+  background: url("/img/pattern_small_010_opacity.png") repeat, url("/img/bg.svg") right top no-repeat;
+}
+
+@media (max-width: 1199px) {
+  body {
+    background: url("/img/pattern_small_010_opacity.png") repeat, url("/img/bg_alt.svg") right top no-repeat;
+  }
+}
+
+@media (min-height: 1080px) {
+  body {
+    background: url("/img/pattern_small_010_opacity.png") repeat, url("/img/bg_alt.svg") right top no-repeat;
+  }
 }

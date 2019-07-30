@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeOptions } from "@material-ui/core/styles/createMuiTheme";
+import { Theme as MUITheme } from "@material-ui/core/styles/createMuiTheme";
 
 const primary = {
   main: "#fc3d6c"
@@ -16,19 +16,21 @@ const additionalPalette = {
   warning: "#fdbc30"
 };
 
-export interface Theme extends ThemeOptions {
+export interface Theme extends MUITheme {
   additionalPalette: {
-    light: string,
-    main: string,
-    strong: string,
-    warning: string
+    light: string;
+    main: string;
+    strong: string;
+    warning: string;
   };
 }
 
-export default createMuiTheme({
+const ThemeObject = {
   palette: {
     primary,
     secondary
   },
   additionalPalette
-} as Theme);
+};
+
+export default createMuiTheme(ThemeObject);

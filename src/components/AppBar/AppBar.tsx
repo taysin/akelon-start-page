@@ -18,9 +18,12 @@ const LINKS = {
   SLACK: process.env.REACT_APP_SLACK_LINK
 };
 
-const Logo = styled("img")({
+const Logo = styled("div")({
   maxHeight: 60,
-  padding: 10
+  padding: 10,
+  ["& img"]: {
+    maxHeight: 40
+  }
 });
 
 const useStyles = makeStyles({
@@ -47,7 +50,9 @@ export default () => {
     <div className={classes.root}>
       <AppBar className={classes.appBarRoot} position="static">
         <Toolbar className={classes.toolbar}>
-          <Logo src="/img/logo_alt.png" alt="Akelon" />
+          <Logo>
+            <img src="/img/logo_alt.png" alt="Akelon" />
+          </Logo>
           <SwipeableBar breakpoints={[[400, 120]]}>
             <SmmLink icon={faFacebook} to={LINKS.FACEBOOK} />
             <SmmLink icon={faVk} to={LINKS.VK} />

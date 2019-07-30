@@ -1,87 +1,19 @@
 import React, { FC } from "react";
-import { Theme, createStyles, makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import ListSubheader from "@material-ui/core/ListSubheader";
-import IconButton from "@material-ui/core/IconButton";
-import InfoIcon from "@material-ui/icons/Info";
-import { Item } from "../../store/getStore";
+import { Item, Store } from "../../store/types";
 import { useBreakpoints } from "./hooks";
+import { useStyles } from "./PageAssembler.styles";
+import Img from "../Img";
 
 interface Props {
-  store: Item[];
+  store: Store;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: "flex",
-      flexWrap: "wrap",
-      justifyContent: "space-around",
-      overflow: "hidden"
-    },
-    gridList: {
-      backgroundColor: theme.palette.background.paper,
-      boxShadow: "0 0 7px 0 rgba(200, 200, 200, 0.5)",
-      width: "100%",
-      margin: "0 0 25px !important",
-      padding: "10px"
-    },
-    icon: {
-      color: "rgba(255, 255, 255, 0.54)"
-    }
-  })
-);
-
-const getRandomColor = () => {
-  const colors = [
-    "#d75c56",
-    "#8a5194",
-    "#5a7cb4",
-    "#74916f",
-    "#796974",
-    "#8c6870",
-    "#614746",
-    "#688a5c",
-    "#8b6001"
-  ];
-
-  return colors[Math.floor(Math.random() * 8)];
-};
-
-const tileData = [
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  },
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  },
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  },
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  },
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  },
-  {
-    img: `http://placehold.it/250x250/${getRandomColor()}`,
-    title: "Image",
-    author: "author"
-  }
-];
+const getImgUrl = (item: Item) =>
+  item.img ? `/img/content/${item.img}` : `http://placehold.it/300x157/`;
 
 const PageAssembler: FC<Props> = ({ store }) => {
   const classes = useStyles();
@@ -90,58 +22,39 @@ const PageAssembler: FC<Props> = ({ store }) => {
 
   return (
     <div className={classes.root}>
-      <GridList cols={cols[breakpoint]} className={classes.gridList}>
-        <GridListTile
-          key="Subheader"
+      {store.map(storeItem => (
+        <GridList
+          key={storeItem.id}
           cols={cols[breakpoint]}
-          style={{ height: "auto" }}
+          className={classes.gridList}
         >
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-        {tileData.map((tile: any) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton
-                  aria-label={`info about ${tile.title}`}
-                  className={classes.icon}
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
+          <GridListTile
+            key="Subheader"
+            cols={cols[breakpoint]}
+            style={{ height: "auto" }}
+          >
+            <ListSubheader className={classes.listSubheader} component="div">
+              {storeItem.title}
+            </ListSubheader>
           </GridListTile>
-        ))}
-      </GridList>
-      <GridList cols={cols[breakpoint]} className={classes.gridList}>
-        <GridListTile
-          key="Subheader"
-          cols={cols[breakpoint]}
-          style={{ height: "auto" }}
-        >
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-        {tileData.map((tile: any) => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton
-                  aria-label={`info about ${tile.title}`}
-                  className={classes.icon}
-                >
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
-          </GridListTile>
-        ))}
-      </GridList>
+          {storeItem.items.map((item: Item) => (
+            <GridListTile key={item.id}>
+              <a
+                href={item.url}
+                className={classes.item}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Img src={getImgUrl(item)} alt={item.description} />
+                <GridListTileBar
+                  title={item.name}
+                  className={classes.gridListTileBar}
+                />
+              </a>
+            </GridListTile>
+          ))}
+        </GridList>
+      ))}
     </div>
   );
 };
