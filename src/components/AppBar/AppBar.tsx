@@ -19,14 +19,13 @@ const LINKS = {
 };
 
 const Logo = styled("div")({
-  maxHeight: 60,
-  padding: 10,
+  maxHeight: 53,
   ["& img"]: {
-    maxHeight: 40
+    maxHeight: 53
   }
 });
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     marginBottom: 20
@@ -35,13 +34,16 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   appBarRoot: {
-    backgroundColor: "#fff"
+    background: "linear-gradient(45deg, rgba(255,255,255,1) 45%, rgba(252,61,109,1) 45%)",
+    [theme.breakpoints.up('md')]: {
+      background: "linear-gradient(45deg, rgba(255,255,255,1) 26%, rgba(252,61,109,1) 26%)"
+    }
   },
   toolbar: {
     display: "flex",
     justifyContent: "space-between"
   }
-});
+}));
 
 export default () => {
   const classes = useStyles();
@@ -51,7 +53,7 @@ export default () => {
       <AppBar className={classes.appBarRoot} position="static">
         <Toolbar className={classes.toolbar}>
           <Logo>
-            <img src="/img/logo_alt.png" alt="Akelon" />
+            <img src="/img/logo_sign.png" alt="Akelon" />
           </Logo>
           <SwipeableBar breakpoints={[[400, 120]]}>
             <SmmLink icon={faFacebook} to={LINKS.FACEBOOK} />

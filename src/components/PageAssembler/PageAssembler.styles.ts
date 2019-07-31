@@ -17,6 +17,8 @@ export const useStyles = makeStyles((theme: Theme) =>
       padding: "10px"
     },
     gridListTileBar: {
+      height: 38,
+      backgroundColor: theme.additionalPalette.light,
       ["& .MuiGridListTileBar-title"]: {
         fontSize: "0.9rem",
         whiteSpace: "inherit",
@@ -49,7 +51,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       width: "100%",
       height: "100%",
       ["& img"]: {
-        opacity: 0.5,
+        opacity: 0.7,
         transition: "150ms"
       },
       ["&:hover img"]: {

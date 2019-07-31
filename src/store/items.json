@@ -5,12 +5,12 @@
     "name": "Корпоративный сайт",
     "description": "Корпоративный сайт компании, на котором собрана основная информация о наших услугах, клиентах и проектах.",
     "url": "https://akelon.com/",
-    "img": "akelon_site.jpg"
+    "img": "akelon_site.png"
   },
   {
     "id": 2,
     "sectionId": 1,
-    "name": "Портал техподдержки",
+    "name": "Портал поддержки",
     "description": "На сайте техподдержки вам окажут услуги по ремонту рабочей техники, установке ПО или просто задать вопрос.",
     "url": "https://service.akelon.com/",
     "img": "akelon_service.png"
@@ -20,13 +20,13 @@
     "sectionId": 1,
     "name": "База знаний",
     "description": "В базе знаний вы найдете ряд созданных нами статей, посвящённых продуктам компании, разработке и так далее.",
-    "url": "https://kmknowledge.akelon.com/",
+    "url": "http://kmknowledge.akelon.com/",
     "img": "akelon_knowledge.png"
   },
   {
     "id": 4,
-    "sectionId": 1,
-    "name": "Web почта",
+    "sectionId": 2,
+    "name": "Веб-доступ к почте",
     "description": "Web клиент для корпоративной почты. Поддерживаются основные операции с письмами, календарем и контактами.",
     "url": "https://mail.akelon.com/owa",
     "img": "akelon_mail.png"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "sectionId": 2,
-    "name": "Мобильная версия КС",
+    "name": "Веб-доступ DIRECTUM",
     "description": "Web версия корпоративной системы DIRECTUM. Есть возможность просматривать, создавать и управлять заданиями.",
     "url": "https://directum.akelon.com/",
     "img": "remote_directum.png"
@@ -50,23 +50,15 @@
   {
     "id": 7,
     "sectionId": 2,
-    "name": "Удаленный веб-доступ",
+    "name": "Удаленный доступ к копроративным ресурсам",
     "description": "Web клиент для удаленного рабочего стола вашей windows машины. Удобно, если срочно потребовалось что-то сделать.",
     "url": "https://rd.akelon.com/",
-    "img": "remote_rdp.png"
-  },
-  {
-    "id": 8,
-    "sectionId": 2,
-    "name": "Мобильный вход в JAZZ/SOLO",
-    "description": "Cumque, ea labore nemo porro ratione vel voluptates! At ipsa iusto laudantium quasi quidem sapiente totam.",
-    "url": "https://nomad.akelon.com/",
-    "img": "remote_jazz.png"
+    "img": "remote_rdp.jpg"
   },
   {
     "id": 9,
     "sectionId": 3,
-    "name": "Техподдержка DIRECTUM",
+    "name": "Портал поддержки DIRECTUM",
     "description": "Cumque, ea labore nemo porro ratione vel voluptates! At ipsa iusto laudantium quasi quidem sapiente totam.",
     "url": "https://support.directum.ru",
     "img": "useful_directum_support.png"
@@ -93,12 +85,12 @@
     "name": "Блог о ECM системах",
     "description": "Cumque, ea labore nemo porro ratione vel voluptates! At ipsa iusto laudantium quasi quidem sapiente totam.",
     "url": "https://ecm-journal.ru/",
-    "img": "useful_ecm_journal.svg"
+    "img": "useful_ecm_journal.png"
   },
   {
     "id": 13,
     "sectionId": 3,
-    "name": "Directum Club",
+    "name": "DIRECTUM Club",
     "description": "Cumque, ea labore nemo porro ratione vel voluptates! At ipsa iusto laudantium quasi quidem sapiente totam.",
     "url": "https://club.directum.ru",
     "img": "useful_directum_club.png"

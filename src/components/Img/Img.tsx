@@ -9,13 +9,14 @@ interface Props {
 const ImgWrapper = styled.div`
   width: 100%;
   height: 100%;
-  padding: 5px 5px 53px;
+  padding: 5px 0 43px;
   display: flex;
   justify-content: center;
   align-items: center;
   
   & img {
     max-height: 123px;
+    flex: 0 0 auto;
   }
 `;
 

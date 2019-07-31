@@ -14,12 +14,12 @@ export default ({ icon, to }: Props) => {
   }
 
   return (
-    <a href={to} target="_blank" rel="noopener noreferrer">
+    <a href={to} target="_blank" rel="noopener noreferrer" style={{color: "#fff"}}>
       <IconButton
         aria-label="Account of current user"
         aria-controls="menu-appbar"
         aria-haspopup="true"
-        color="secondary"
+        color="inherit"
       >
         <FontAwesomeIcon icon={icon} />
       </IconButton>
