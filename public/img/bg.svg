@@ -1,0 +1,21 @@
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg" opacity="0.7">
+    <rect
+            transform="rotate(35, 620, 394.45)"
+            id="svg_2"
+            height="800"
+            width="600"
+            y="-250"
+            x="1800"
+            fill="#fc3d6c"
+    />
+    <rect
+         class="hidden-md"
+         transform="rotate(45.3942, 536.809, 44.3525)"
+         id="svg_1"
+         height="600"
+         width="1200"
+         y="-1100"
+         x="1000"
+         fill="#8c92a4"
+    />
+</svg>
