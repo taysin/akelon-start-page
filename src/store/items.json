@@ -42,7 +42,7 @@
   {
     "id": 6,
     "sectionId": 2,
-    "name": "Справка к КС",
+    "name": "Веб-справка DIRECTUM",
     "description": "Справка по КС. В справке можно найти основную информацию по использованию, администрированию и разработке КС.",
     "url": "http://dirhelp.akelon.com/",
     "img": "remote_directum_help.png"
